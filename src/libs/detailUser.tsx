@@ -2,7 +2,7 @@ import { toast } from "react-hot-toast";
 import { MdCancel } from "react-icons/md";
 import { FaTrashAlt } from "react-icons/fa";
 import userColumns from "./userColumns";
-import { Button } from "@chakra-ui/react";
+import { Button, Text } from "@chakra-ui/react";
 
 export default function detailUser(user: any, onDelete = () => {}) {
     const keys = Object.keys(user)
@@ -12,10 +12,21 @@ export default function detailUser(user: any, onDelete = () => {}) {
         >
             <div className="flex-1 w-0 p-4 mt-2" >
                 <div 
-                    className="flex items-start"
+                    className="items-start"
                 >
+                    <Text
+                        size={'md'}
+                        fontWeight={'bold'}
+                    >
+                        User Detail
+                    </Text>
+                    <Text
+                        style={{ fontSize: 11 }}
+                    >
+                        This inquiry about user with email {String(user.email).toLowerCase()}
+                    </Text>
                     <div 
-                        className="ml-3 flex-1"
+                        className="mt-4 ml-3 flex-1"
                         style={{
                             'overflow': 'auto',
                             height: 300,
